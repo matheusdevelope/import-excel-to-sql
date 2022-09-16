@@ -1,0 +1,35 @@
+{
+  "name": "import-excel-to-sql",
+  "displayName": "Importar Excel Para SQL Server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist",
+  "scripts": {
+    "start": "tsc && node .",
+    "build:dev": "tsc -w",
+    "dev": "nodemon .",
+    "build": "yarn pkg . --compress GZip"
+  },
+  "bin": "dist/index.js",
+  "pkg": {
+    "scripts": [
+      "node_modules/mssql/**/*.js",
+      "node_modules/read-excel-file/**/*.js"
+    ],
+    "targets": [
+      "node16-win-x64"
+    ],
+    "outputPath": "package"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mssql": "^9.0.1",
+    "read-excel-file": "^5.4.7"
+  },
+  "devDependencies": {
+    "@types/mssql": "^8.1.1",
+    "@types/node": "^18.7.16",
+    "pkg": "^5.8.0"
+  }
+}
